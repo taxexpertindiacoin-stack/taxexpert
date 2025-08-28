@@ -1,0 +1,99 @@
+/* Google Fonts (Optional, for better typography) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Main container for all team members */
+.team-section {
+    display: flex; /* Members ko ek line mein rakhega */
+    justify-content: center; /* Page ke center mein align karega */
+    align-items: stretch; /* Sabhi cards ki height barabar rakhega */
+    flex-wrap: wrap; /* Chhoti screens par cards neeche aa jayenge */
+    gap: 2rem; /* Cards ke beech mein space */
+    padding: 3rem 1rem; /* Section ke upar-neeche aur side mein space */
+    font-family: 'Poppins', sans-serif; /* Font style */
+}
+
+/* Individual team member card */
+.team-member {
+    background-color: #ffffff; /* Card ka color */
+    border-radius: 15px; /* Card ke corners ko round karega */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Card ko halki shadow dega */
+    overflow: hidden; /* Image ko card ke andar contain karega */
+    text-align: center; /* Card ke text ko center karega */
+    width: 320px; /* Card ki max width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect ke liye animation */
+}
+
+/* Hover effect for the card */
+.team-member:hover {
+    transform: translateY(-10px); /* Card hover par thoda upar uthega */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Shadow thodi gehri ho jayegi */
+}
+/* Team member's image */
+.team-member img {
+    width: 100%;                  /* Image card ki poori width legi */
+    height: 300px;                /* Sabhi images ki height fix karega */
+    display: block;
+
+    /* YEH LINE BADALNI HAI */
+    object-fit: contain;          /* Image ko poora dikhayega, bina crop kiye, space khaali chhod sakta hai */
+    
+    background-color: #f0f0f0;    /* Agar image choti ho to background dikhega */
+    object-position: center;      /* Image ko center mein rakhega */
+}
+
+/* Team member's name */
+.team-member h3 {
+    font-size: 1.3rem; /* Naam ka font size */
+    font-weight: 600; /* Font ko thoda bold karega */
+    margin: 1.5rem 1rem 0.25rem 1rem;
+    color: #333;
+}
+
+/* Team member's title/designation */
+.team-member p {
+    font-size: 1rem;
+    color: #6c757d; /* Title ka halka color */
+    margin: 0 1rem 1.5rem 1rem;
+}
+
+/* Links (social icons and view profile) ke liye container */
+.member-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Links ke beech mein space */
+    padding-bottom: 2rem; /* Card ke neeche space */
+}
+
+/* Social media icons ke liye style */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #18a94e; /* Icon ka background color */
+    color: white; /* Icon ka color */
+    border-radius: 50%; /* Icon ko gol (circle) banayega */
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #6add94; /* Hover par color badlega */
+    transform: scale(1.1); /* Hover par icon thoda bada hoga */
+}
+
+/* 'View profile' link ke liye style */
+.profile-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    border-bottom: 2px solid transparent; /* Hover effect ke liye */
+    transition: border-color 0.3s ease;
+}
+
+.profile-link:hover {
+    border-color: #18a94e; /* Hover par neeche line aayegi */
+}
