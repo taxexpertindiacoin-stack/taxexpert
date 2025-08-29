@@ -137,25 +137,24 @@
         <div class="bh_contact_form2 bh_section_title">
           <h2>Send us a Message</h2>
           <p class="form-messages"></p>
-    <form name="contact" method="POST" data-netlify="true">
-
-    <div class="row">
-        <div class="col-sm-6">
-            <input type="text" name="Name" id="userName" placeholder="Name" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
-            <input type="text" name="Subject" id="userSubject" placeholder="Subject" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
-        </div>
-        <div class="col-sm-6">
-            <input type="email" name="Email" id="userEmail" placeholder="Email" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
-            <input type="text" name="Phone" id="userPhone" placeholder="Phone Number" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
-        </div>
-        <div class="col-sm-12">
-            <textarea rows="4" placeholder="Message" name="Message" id="Message" style="border-radius:10px; width: 100%;"></textarea>
-            <div class="bh_submit_btn">
-                <input type="submit" value="Send Message" class="common_shadow_hover" style="background-color:green; color: white; padding: 10px 15px; border: none; border-radius: 10px; cursor: pointer;">
+     <form id="whatsapp-form">
+        <div class="row">
+            <div class="col-sm-6">
+                <input type="text" name="userName" id="userName" placeholder="Name" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
+                <input type="text" name="userSubject" id="userSubject" placeholder="Subject" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
+            </div>
+            <div class="col-sm-6">
+                <input type="text" name="userEmail" id="userEmail" placeholder="Email" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
+                <input type="text" name="userPhone" id="userPhone" placeholder="Phone Number" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
+            </div>
+            <div class="col-sm-12">
+                <textarea rows="4" placeholder="Message" name="message" id="Message" style="border-radius:10px; width: 100%;"></textarea>
+                <div class="bh_submit_btn">
+                    <input type="submit" value="Send on WhatsApp" class="common_shadow_hover" style="background-color:green; color: white; padding: 10px 15px; border: none; border-radius: 10px; cursor: pointer;">
+                </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
         </div>
       </div>
       <hr>
@@ -289,6 +288,7 @@
 </body>
 
 </html>
+
 
 
 
