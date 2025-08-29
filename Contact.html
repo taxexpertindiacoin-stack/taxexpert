@@ -137,7 +137,7 @@
         <div class="bh_contact_form2 bh_section_title">
           <h2>Send us a Message</h2>
           <p class="form-messages"></p>
-           <form id="whatsapp-form">
+      <form action="mail.php" method="POST">
         <div class="row">
             <div class="col-sm-6">
                 <input type="text" name="userName" id="userName" placeholder="Name" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
@@ -150,10 +150,11 @@
             <div class="col-sm-12">
                 <textarea rows="4" placeholder="Message" name="message" id="Message" style="border-radius:10px; width: 100%;"></textarea>
                 <div class="bh_submit_btn">
-                    <input type="submit" value="Send on WhatsApp" class="common_shadow_hover" style="background-color:green; color: white; padding: 10px 15px; border: none; border-radius: 10px; cursor: pointer;">
+                  <input type="submit" value="Send Message">
                 </div>
             </div>
         </div>
+  
     </form>
         </div>
       </div>
@@ -288,5 +289,6 @@
 </body>
 
 </html>
+
 
 
