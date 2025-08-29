@@ -242,43 +242,45 @@
       </div>
     </div>
   </footer>
-    <script>
-        // Listen for the form submission
-        document.getElementById('whatsapp-form').addEventListener('submit', function (event) {
-            // Prevent the default form submission
-            event.preventDefault();
+ <script>
+    // Listen for the form submission
+    document.getElementById('whatsapp-form').addEventListener('submit', function (event) {
+        // Prevent the default form submission
+        event.preventDefault();
 
-            // --- 1. ENTER YOUR WHATSAPP NUMBER HERE ---
-            // Include country code, but no '+' or spaces. For example: '919876543210' for India.
-            const phoneNumber = 'YOUR_WHATSAPP_NUMBER_HERE';
+        // --- 1. WHATSAPP NUMBER CORRECTED HERE ---
+        // The number is now in the correct string format.
+        const phoneNumber = '919781575587';
 
 
-            // --- 2. GET FORM VALUES ---
-            const name = document.getElementById('userName').value;
-            const subject = document.getElementById('userSubject').value;
-            const email = document.getElementById('userEmail').value;
-            const phone = document.getElementById('userPhone').value;
-            const message = document.getElementById('Message').value;
+        // --- 2. GET FORM VALUES ---
+        const name = document.getElementById('userName').value;
+        const subject = document.getElementById('userSubject').value;
+        const email = document.getElementById('userEmail').value;
+        const phone = document.getElementById('userPhone').value;
+        const message = document.getElementById('Message').value;
 
-            // --- 3. CREATE THE MESSAGE ---
-            // We use \n to create new lines
-            const formattedMessage = `*New Enquiry:*\n\n` +
-                                     `*Name:* ${name}\n` +
-                                     `*Phone:* ${phone}\n` +
-                                     `*Email:* ${email}\n` +
-                                     `*Subject:* ${subject}\n\n` +
-                                     `*Message:*\n${message}`;
+        // --- 3. CREATE THE MESSAGE ---
+        // We use \n to create new lines
+        const formattedMessage = `*New Enquiry:*\n\n` +
+                                 `*Name:* ${name}\n` +
+                                 `*Phone:* ${phone}\n` +
+                                 `*Email:* ${email}\n` +
+                                 `*Subject:* ${subject}\n\n` +
+                                 `*Message:*\n${message}`;
 
-            // --- 4. CREATE WHATSAPP URL ---
-            // We need to encode the message to make it URL-safe
-            const encodedMessage = encodeURIComponent(formattedMessage);
-            const whatsappURL = `https://wa.me/${+91 97815-75587}?text=${encodedMessage}`;
+        // --- 4. CREATE WHATSAPP URL ---
+        // We need to encode the message to make it URL-safe
+        const encodedMessage = encodeURIComponent(formattedMessage);
+        
+        // This line now correctly uses the phoneNumber variable from above
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-            // --- 5. OPEN WHATSAPP ---
-            // Open the URL in a new browser tab
-            window.open(whatsappURL, '_blank');
-        });
-    </script>
+        // --- 5. OPEN WHATSAPP ---
+        // Open the URL in a new browser tab
+        window.open(whatsappURL, '_blank');
+    });
+</script>
   <script src="js/jquery-3.1.0.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
@@ -286,3 +288,4 @@
 </body>
 
 </html>
+
