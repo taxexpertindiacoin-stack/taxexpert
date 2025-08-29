@@ -137,24 +137,24 @@
         <div class="bh_contact_form2 bh_section_title">
           <h2>Send us a Message</h2>
           <p class="form-messages"></p>
-          <form action="mail.php" id="ajax-contact" method="POST">
-            <div class="row">
-              <div class="col-sm-6">
-                <input type="text" name="userName" id="userName" placeholder="Name" style="border-radius:10px">
-                <input type="text" name="userSubject" id="userSubject" placeholder="Subject" style="border-radius:10px">
-              </div>
-              <div class="col-sm-6">
-                <input type="text" name="userEmail" id="userEmail" placeholder="Email" style="border-radius:10px">
-                <input type="text" name="userPhone" id="userPhone" placeholder="Phone Number" style="border-radius:10px">
-              </div>
-              <div class="col-sm-12">
-                <textarea rows="4" placeholder="Message" name="message" id="Message" style="border-radius:10px"></textarea>
-                <div class="bh_submit_btn">
-                  <input type="submit" value="send" class="common_shadow_hover" style="background-color:green">
-                </div>
-              </div>
+           <form id="whatsapp-form">
+        <div class="row">
+            <div class="col-sm-6">
+                <input type="text" name="userName" id="userName" placeholder="Name" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
+                <input type="text" name="userSubject" id="userSubject" placeholder="Subject" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
             </div>
-          </form>
+            <div class="col-sm-6">
+                <input type="text" name="userEmail" id="userEmail" placeholder="Email" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
+                <input type="text" name="userPhone" id="userPhone" placeholder="Phone Number" style="border-radius:10px; margin-bottom: 10px; width: 100%;">
+            </div>
+            <div class="col-sm-12">
+                <textarea rows="4" placeholder="Message" name="message" id="Message" style="border-radius:10px; width: 100%;"></textarea>
+                <div class="bh_submit_btn">
+                    <input type="submit" value="Send on WhatsApp" class="common_shadow_hover" style="background-color:green; color: white; padding: 10px 15px; border: none; border-radius: 10px; cursor: pointer;">
+                </div>
+            </div>
+        </div>
+    </form>
         </div>
       </div>
       <hr>
@@ -242,9 +242,47 @@
       </div>
     </div>
   </footer>
+    <script>
+        // Listen for the form submission
+        document.getElementById('whatsapp-form').addEventListener('submit', function (event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // --- 1. ENTER YOUR WHATSAPP NUMBER HERE ---
+            // Include country code, but no '+' or spaces. For example: '919876543210' for India.
+            const phoneNumber = 'YOUR_WHATSAPP_NUMBER_HERE';
+
+
+            // --- 2. GET FORM VALUES ---
+            const name = document.getElementById('userName').value;
+            const subject = document.getElementById('userSubject').value;
+            const email = document.getElementById('userEmail').value;
+            const phone = document.getElementById('userPhone').value;
+            const message = document.getElementById('Message').value;
+
+            // --- 3. CREATE THE MESSAGE ---
+            // We use \n to create new lines
+            const formattedMessage = `*New Enquiry:*\n\n` +
+                                     `*Name:* ${name}\n` +
+                                     `*Phone:* ${phone}\n` +
+                                     `*Email:* ${email}\n` +
+                                     `*Subject:* ${subject}\n\n` +
+                                     `*Message:*\n${message}`;
+
+            // --- 4. CREATE WHATSAPP URL ---
+            // We need to encode the message to make it URL-safe
+            const encodedMessage = encodeURIComponent(formattedMessage);
+            const whatsappURL = `https://wa.me/${+91 97815-75587}?text=${encodedMessage}`;
+
+            // --- 5. OPEN WHATSAPP ---
+            // Open the URL in a new browser tab
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
   <script src="js/jquery-3.1.0.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/active.js"></script>
 </body>
+
 </html>
